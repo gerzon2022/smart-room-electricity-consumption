@@ -4,7 +4,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 
-$db_name = "gerzon";
+$db_name = "smartroom";
 
 $conn = mysqli_connect($servername, $username, $password, $db_name);
 
