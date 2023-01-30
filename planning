@@ -1,0 +1,29 @@
+DB
+1. Admin
+Website receives LO_kWh,CO, LO_kWh & ACU_ LO_kWh data from hardware
+- device_Id, LO_kWh,CO, LO_kWh & ACU_ LO_kWh 
+
+Activate users (ID Number, Type: Admin/Faculty/Student, RFID Code)
+- idnumber, type, rfid_code, status, p_consumable, p_consumed
+
+Renew Student Power Consumption 
+- Update p_consumed = p_consumable
+
+Set Power Allowance (Set Student Power Consumption)
+- Update p_consumable = user-define/enum
+
+On demand ON & OFF hardware
+- toggle button 
+
+2. Faculty
+Plot Class Schedule in website 
+-device_id, Monday, Tuesday, Wednesday, Thursday, Friday
+
+On demand ON & OFF hardware as long as no conflict of schedule 
+- device receives on/off status (on tx file: date.toLocalTime between sched true, echo 1 else echo 0)
+
+3. Student
+See Power Consumption & Power Allowance
+-select from data sent by hardware
+
+
