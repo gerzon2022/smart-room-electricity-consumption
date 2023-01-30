@@ -1,0 +1,198 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin : 0;
+}
+@media (min-width : 720px) {
+    .input {
+        height: 30px;
+    }
+    header{
+        .header-content {
+            height: 120px;
+            width: 100%;
+            border: 1px solid black;
+        }
+    }
+    main {
+        height: 100vh;
+        width: 100vw;
+        //background-color: ;
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            .hero {
+                display: inline-flex;
+                width: 950px;
+                height: 600px;
+                box-shadow: 2px 2px 10px 3px black;
+                
+                .split-container {
+                    width: 100%;
+                    display: flex;
+                    .split-content {
+                        .hero-img {
+                            // background-image: url("../images/USTP-CDO.jpg");
+                            width: 100%;
+                            height: 100%;
+                            background-image: url("../images/USTP-CDO.jpg");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                        .right {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            height: auto;
+                            padding : 20px;
+                            .login-img-container {
+                                height: 325px;
+                                display: inline;
+                                .img-top{
+                                    transform: scale(.75);
+                                    width: 350px;
+                                    height: 325px;
+                                }
+                            }
+                            .login-content{
+                                height: 150px;
+                                display: flex;
+                                justify-content: space-around;
+                                .login-inputs {
+                                    input {
+                                        @extend .input;
+                                        margin: 10px 0;
+                                        width: 300px;
+                                        font-weight: 600;
+                                    }
+                                    .password-content{
+                                        position: relative;
+                                        
+                                        a.forgot-password {
+                                            text-transform: capitalize;
+                                            position: absolute;
+                                            bottom: -10%;
+                                            right: 0;
+                                            font-size: 12px;
+                                        }
+                                    }
+                                    .login-button-container{
+                                        .submit-btn {
+                                            @extend input;
+                                            width: 100%;
+                                            background-image: url("../images/Buttons/Singnin_Button.png");
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                            text-transform: uppercase;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            font-weight: 600;
+                                            margin:20px 0;
+                                            color: #fff;
+                                        }
+                                    }
+                                    .new-user-question {
+                                        text-align: center;
+                                        @extend input;
+                                        width: 100%;
+                                        a{
+                                            font-weight: 600;  
+                                            text-transform: capitalize; 
+                                        }
+
+                                    }
+                                }
+                            }
+                            .signup-inputs {
+                                .signup-input {
+                                    padding: 15px 10px;
+                                    input {
+                                        @extend .input;
+                                        width: 300px;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                            .signup-button-container {
+                                display: flex;
+                                justify-content: center;
+                                .register-btn {
+                                    @extend .signup-input;
+                                    background-image: url("../images/Buttons/Singnin_Button.png");
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    text-transform: uppercase;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    font-weight: 600;
+                                    margin:20px 0;
+                                    width: 295px;
+                                    color: #fff;
+                                }
+                            }
+                            .new-user-question {
+                                @extend .signup-button-container;
+                            }
+                            .signup-form {
+                                padding: 10px 0;
+                            }
+                        }
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                
+            }
+            
+            &.dashboard {
+                display: unset;
+                display: flex;
+                .side-nav{
+                    align-self: flex-start;
+                    padding: 10px;
+                    .nav-items-container{
+                        .nav-list{
+                            li.nav-item{
+                                display: block;
+                                text-transform: capitalize;
+                                font-weight: 600;
+                                padding: 10px 0;
+                                .menu {
+                                    background-image: url("../images/Buttons/Singnin_Button.png");
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    text-transform: capitalize;
+                                    display: flex;
+                                    justify-content: left;
+                                    align-items: center;
+                                    font-weight: 600;
+                                    width: 295px;
+                                    height: 30px;
+                                    color: #fff;
+                                    padding: 5px 8px;
+                                    letter-spacing: .2em;
+                                    a {
+                                        text-decoration: none;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .display-area {
+                    .display-content {
+                     padding: 20px 40px;   
+                    }
+                    height: 100%;
+                    width: 100%;
+                    
+                }
+            }
+        }
+        
+    }
+}
