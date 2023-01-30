@@ -3,7 +3,7 @@
 <?php
 session_start();
 
-include("database_connect.php"); 	//We include the database_connect.php which has the data for the connection to the database
+include("db_conn.php"); 	//We include the database_connect.php which has the data for the connection to the database
 
 /*This file should receive a link somethong like this: http://noobix.000webhostapp.com/TX.php?unit=1&b1=1
 If you paste that link to your browser, it should update b1 value with this TX.php file. Read more details below.
