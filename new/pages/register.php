@@ -36,7 +36,7 @@
                                             <input type="text" class="family-name" placeholder="Family Name" name = "family-name" id = "family-name"/>
                                         </div>
                                         <div class="signup-input">
-                                            <input type="text" class="id-number" placeholder="ID Number" name = "username" id = "username"/>
+                                            <input type="text" class="id-number" placeholder="ID Number" name = "username" id = "usernamegti"/>
                                         </div>
                                         <div class="signup-input">
                                             <input type="password" class="password" placeholder="Password" name = "password" id = "password" />
