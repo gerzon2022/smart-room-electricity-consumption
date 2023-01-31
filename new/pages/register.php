@@ -24,19 +24,25 @@
                     <div class="split-container">
                         <div class="split-content">
                             <div class="right">
-                            <form action="" class="signup-form">
+                            <form action="../create/create_user.php" class="signup-form">
                                     <div class="signup-inputs">
                                         <div class="signup-input">
-                                            <input type="text" class="first-name" placeholder="First Name" name = "first-name" id = "first-name"/>
+                                            <input type="text" class="first-name" placeholder="First Name" name = "first_name" id = "first_name"/>
                                         </div>
                                         <div class="signup-input">
-                                            <input type="text" class="middle-name" placeholder="Middle Name" name = "middle-name" id = "middle-name" />
+                                            <input type="text" class="middle-name" placeholder="Middle Name" name = "middle_name" id = "middle_name" />
                                         </div>
                                         <div class="signup-input">
-                                            <input type="text" class="family-name" placeholder="Family Name" name = "family-name" id = "family-name"/>
+                                            <input type="text" class="family-name" placeholder="Family Name" name = "family_name" id = "family_name"/>
                                         </div>
                                         <div class="signup-input">
-                                            <input type="text" class="id-number" placeholder="ID Number" name = "username" id = "usernamegti"/>
+                                            <select name="user_type" id="user_type">
+                                                <option value="faculty">I am a faculty</option>
+                                                <option value="student">I am a student</option>
+                                            </select>
+                                        </div>
+                                        <div class="signup-input">
+                                            <input type="text" class="id-number" placeholder="ID Number" name = "username" id = "username"/>
                                         </div>
                                         <div class="signup-input">
                                             <input type="password" class="password" placeholder="Password" name = "password" id = "password" />

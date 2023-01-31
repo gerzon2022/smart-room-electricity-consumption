@@ -1,3 +1,9 @@
+<?php
+session_start();
+include "php/db_conn.php";
+if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,3 +46,9 @@
     
 </body>
 </html>
+
+<?php
+} else {
+  header("Location: ../../index.php");
+}
+?>
