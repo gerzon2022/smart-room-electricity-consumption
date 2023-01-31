@@ -27,22 +27,22 @@
                             <form action="" class="signup-form">
                                     <div class="signup-inputs">
                                         <div class="signup-input">
-                                            <input type="text" class="first-name" placeholder="First Name" />
+                                            <input type="text" class="first-name" placeholder="First Name" name = "first-name" id = "first-name"/>
                                         </div>
                                         <div class="signup-input">
-                                            <input type="text" class="middle-name" placeholder="Middle Name" />
+                                            <input type="text" class="middle-name" placeholder="Middle Name" name = "middle-name" id = "middle-name" />
                                         </div>
                                         <div class="signup-input">
-                                            <input type="text" class="family-name" placeholder="Family Name" />
+                                            <input type="text" class="family-name" placeholder="Family Name" name = "family-name" id = "family-name"/>
                                         </div>
                                         <div class="signup-input">
-                                            <input type="text" class="id-number" placeholder="ID Number" />
+                                            <input type="text" class="id-number" placeholder="ID Number" name = "username" id = "username"/>
                                         </div>
                                         <div class="signup-input">
-                                            <input type="password" class="password" placeholder="Password" />
+                                            <input type="password" class="password" placeholder="Password" name = "password" id = "password" />
                                         </div>
                                         <div class="signup-input">
-                                            <input type="text" class="confirm-password" placeholder="Confirm Password" />
+                                            <input type="text" class="confirm-password" placeholder="Confirm Password" name = "repeat_password" id = "repeat_password"/>
                                         </div>
                                         <div class="signup-button-container">
                                             <div class="register-btn">register</div>
