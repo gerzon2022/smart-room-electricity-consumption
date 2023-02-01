@@ -2,7 +2,7 @@ DB
 1. Admin
 Website receives LO_kWh,CO, LO_kWh & ACU_ LO_kWh data from hardware
 
-- device_Id, LO_kWh,CO, LO_kWh & ACU_ LO_kWh 
+- device_Id, LO_kWh,CO, LO_kWh & ACU_6LO_kWh 
 
 Activate users (ID Number, Type: Admin/Faculty/Student, RFID Code)
 - idnumber, type, rfid_code, status, p_consumable, p_consumed
