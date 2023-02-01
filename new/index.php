@@ -30,7 +30,7 @@
                                 </div>
     
                                 <div class="login-content">
-                                    <form action="login-check.php" class="login-form">
+                                    <form action="login-check.php" method = "POST" class="login-form">
                                         <div class="login-inputs">
                                             <div class="username-content">
                                                 <input class="username" type="text" name = "username" placeholder = "ID Number"/>

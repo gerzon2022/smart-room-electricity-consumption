@@ -2,7 +2,7 @@
 session_start();
 include "../db_conn.php";
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repeat_password']) &&
-    isset($_POST['user_type']) && isset($_POST['first-name']) && isset($_POST['middle-name']) && isset($_POST['family-name'])) {
+    isset($_POST['user_type']) && isset($_POST['first_name']) && isset($_POST['middle_name']) && isset($_POST['family_name'])) {
     function validate($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -27,16 +27,16 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repe
         header("Location: ../pages/register.php?error=Repeat Password is required");
         exit();
     } else if (empty($user_type)) {
-        header("Location: ../pages/register.php?error=Password is required");
+        header("Location: ../pages/register.php?error=user_type is required");
         exit();
     } else if (empty($first_name)) {
-        header("Location: ../pages/register.php?error=Password is required");
+        header("Location: ../pages/register.php?error=first_name is required");
         exit();
     } else if (empty($middle_name)) {
-        header("Location: ../pages/register.php?error=Password is required");
+        header("Location: ../pages/register.php?error=middle_name is required");
         exit();
     } else if (empty($family_name)) {
-        header("Location: ../pages/register.php?error=Password is required");
+        header("Location: ../pages/register.php?error=family_name is required");
         exit();
     } 
     // else if (empty($contact_number)) {
@@ -66,15 +66,14 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repe
             header("Location: ../pages/register.php?error=The username is already taken try another");
             exit();
         } else {
-            $sql_insert = "INSERT INTO `tbl_user_info`(`id_number`, `password`, `firstname_name`, `middle_name`, `family_name`. `acc_type`) 
+            $sql_insert = "INSERT INTO `tbl_user_info`(`id_number`, `acc_pw`, `first_name`, `middle_name`, `family_name`, `acc_type`) 
                         VALUES ('$username','$password','$first_name','$middle_name','$family_name', '$user_type')";
             $result_insert = mysqli_query($conn, $sql_insert);
             if ($result_insert) {
-                if
                 header("Location: ../pages/dashboard.php?success=Your account has been created successfully");
                 exit();
             } else {
-                header("Location: ../pages/register.php?error=Unknown error occured");
+                 header("Location: ../pages/register.php?error=Unknown error occured");
                 exit();
             }
         }

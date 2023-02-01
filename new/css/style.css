@@ -123,6 +123,7 @@ body {
     margin: 20px 0;
     width: 295px;
     color: #fff;
+    cursor: pointer;
   }
   main .main-content .hero .split-container .split-content .right .signup-form {
     padding: 10px 0;

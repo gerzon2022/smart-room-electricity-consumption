@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "php/db_conn.php";
+include "../db_conn.php";
 if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
 ?>
 
@@ -11,7 +11,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script
   src="https://code.jquery.com/jquery-3.6.3.min.js"
   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="

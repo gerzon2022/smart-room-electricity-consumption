@@ -24,7 +24,13 @@
                     <div class="split-container">
                         <div class="split-content">
                             <div class="right">
-                            <form action="../create/create_user.php" class="signup-form">
+                            <form action="../create/create_user.php" method = "POST" class="signup-form">
+                                    <div class="signup-input">
+                                        <select name="user_type" id="user_type" class="input">
+                                            <option value="faculty">I am a faculty</option>
+                                            <option value="student">I am a student</option>
+                                        </select>
+                                    </div>
                                     <div class="signup-inputs">
                                         <div class="signup-input">
                                             <input type="text" class="first-name" placeholder="First Name" name = "first_name" id = "first_name"/>
@@ -35,12 +41,7 @@
                                         <div class="signup-input">
                                             <input type="text" class="family-name" placeholder="Family Name" name = "family_name" id = "family_name"/>
                                         </div>
-                                        <div class="signup-input">
-                                            <select name="user_type" id="user_type">
-                                                <option value="faculty">I am a faculty</option>
-                                                <option value="student">I am a student</option>
-                                            </select>
-                                        </div>
+                                        
                                         <div class="signup-input">
                                             <input type="text" class="id-number" placeholder="ID Number" name = "username" id = "username"/>
                                         </div>
@@ -51,7 +52,7 @@
                                             <input type="text" class="confirm-password" placeholder="Confirm Password" name = "repeat_password" id = "repeat_password"/>
                                         </div>
                                         <div class="signup-button-container">
-                                            <div class="register-btn">register</div>
+                                            <button style = "border : none;"><div class="register-btn">register</div></button>
                                         </div>
                                         <div class="new-user-question">
                                             <span class="question">Already have an account?</span>
