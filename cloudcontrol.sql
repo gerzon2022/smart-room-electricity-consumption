@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2023 at 04:06 PM
+-- Generation Time: Feb 01, 2023 at 05:07 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -78,8 +78,19 @@ CREATE TABLE `tbl_user_info` (
   `acc_status` varchar(20) NOT NULL,
   `p_consumable` decimal(10,0) NOT NULL,
   `p_consumed` decimal(10,0) NOT NULL,
-  `acc_pw` text NOT NULL
+  `acc_pw` text NOT NULL,
+  `first_name` varchar(20) NOT NULL,
+  `middle_name` varchar(20) NOT NULL,
+  `family_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_user_info`
+--
+
+INSERT INTO `tbl_user_info` (`id_number`, `acc_type`, `rfid_code`, `acc_status`, `p_consumable`, `p_consumed`, `acc_pw`, `first_name`, `middle_name`, `family_name`) VALUES
+('asdf', 'faculty', '', '', '0', '0', '202cb962ac59075b964b07152d234b70', 'asdfa', 'afasdf', 'asdfa'),
+('asdfasd', 'student', '', '', '0', '0', '202cb962ac59075b964b07152d234b70', 'asdfasdf', 'asdfas', 'asdf');
 
 --
 -- Indexes for dumped tables
