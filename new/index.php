@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +30,7 @@
                                 </div>
     
                                 <div class="login-content">
-                                    <form action="" class="login-form">
+                                    <form action="login-check.php" class="login-form">
                                         <div class="login-inputs">
                                             <div class="username-content">
                                                 <input class="username" type="text" name = "username" placeholder = "ID Number"/>
@@ -38,6 +39,17 @@
                                                 <input type="password" class="password" placeholder = "Password">
                                                 <a href="#" class="forgot-password">forgot password?</a>
                                             </div>
+                                                  <!-- ALERT -->
+                                                <?php if (isset($_GET['error'])) { ?>
+                                                    <div class="alert alert-danger" role="alert">
+                                                        <?php echo $_GET['error']; ?>
+                                                    </div>
+                                                <?php } ?>
+                                                <?php if (isset($_GET['success'])) { ?>
+                                                    <div class="alert alert-success" role="alert">
+                                                        <?php echo $_GET['success']; ?>
+                                                    </div>
+                                                <?php } ?>
                                             <div class="login-button-container">
                                                 <div class="submit-btn">sign in</div>
                                             </div>
