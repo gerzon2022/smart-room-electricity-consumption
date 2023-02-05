@@ -23,7 +23,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
         $(document).ready(()=>{
 
         })
-        sessionStorage.setItem("user-type", "admin")
+        sessionStorage.setItem("user-type", null)
     </script>
     <header>
         <div class="header-content">
@@ -37,6 +37,11 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
           ?>
             <div class="display-area">
                 <div class="display-content">
+                  <div class="center-container">
+                      <div class="center-content">
+                        <h2>Welcome! Your account is now pending for Admin Approval</h2>
+                      </div>
+                  </div>
                     
                 </div>
             </div>

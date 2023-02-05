@@ -70,7 +70,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repe
                         VALUES ('$username','$password','$first_name','$middle_name','$family_name', '$user_type')";
             $result_insert = mysqli_query($conn, $sql_insert);
             if ($result_insert) {
-                header("Location: ../pages/dashboard.php?success=Your account has been created successfully");
+                header("Location: ../pages/welcome.php?success=Your account has been created successfully");
                 exit();
             } else {
                  header("Location: ../pages/register.php?error=Unknown error occured");

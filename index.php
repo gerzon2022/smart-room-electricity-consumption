@@ -36,7 +36,7 @@
                                                 <input class="username" type="text" name = "username" placeholder = "ID Number"/>
                                             </div>
                                             <div class="password-content">
-                                                <input type="password" class="password" placeholder = "Password">
+                                                <input type="password" class="password" name = "password" placeholder = "Password">
                                                 <a href="#" class="forgot-password">forgot password?</a>
                                             </div>
                                                   <!-- ALERT -->
@@ -51,7 +51,9 @@
                                                     </div>
                                                 <?php } ?>
                                             <div class="login-button-container">
+                                                <button class = "submit-btn">
                                                 <div class="submit-btn">sign in</div>
+                                                </button>
                                             </div>
                                             <div class="new-user-question">
                                                 <span class="question">New user?</span>

@@ -2,7 +2,7 @@
 <div class="side-nav">
     <div class="nav-items-container">
         <ul class="nav-list">
-            <li class="nav-item admin "><div class="menu"><a href="">activate users</a></div></li>
+            <li class="nav-item admin " id = "activate-user"><div class="menu"><a href="" >activate users</a></div></li>
             <li class="nav-item admin"><div class="menu"><a href="">renew student</a></div></li>
             <li class="nav-item faculty"><div class="menu"><a href="">class schedule</a></div></li>
             <li class="nav-item admin"><div class="menu"><a href="">set power allowance</a></div></li>
@@ -16,11 +16,13 @@
 <script>
     //wafdasfsad
 $(".nav-item").hide()    
-if(sessionStorage.getItem("user-type") == "admin"){
+if(sessionStorage.getItem("acc-type") == "admin"){
     $(".admin").show()
-} else if(sessionStorage.getItem("user-type") == "faculty") {
+} else if(sessionStorage.getItem("acc-type") == "faculty") {
     $(".faculty").show()
-} else if(sessionStorage.getItem("user-type") == "student") {
+} else if(sessionStorage.getItem("acc-type") == "student") {
     $(".student").show()
+} else {
+    $(".nav-item").hide()
 }
 </script>
