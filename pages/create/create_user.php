@@ -56,14 +56,14 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repe
     // 
     //} 
     else if ($password !== $repeat_password) {
-        header("Location: ../register.php?error=Repeat password does not match");
+        header("Location: ../pages/register.php?error=Repeat password does not match");
         exit();
     } else {
         $password = md5($password);
         $user_check = "SELECT * FROM `tbl_user_info` WHERE id_number='$username'";
         $user_result = mysqli_query($conn, $user_check);
         if (mysqli_num_rows($user_result) > 0) {
-            header("Location: ../register.php?error=The username is already taken try another");
+            header("Location: ../pages/register.php?error=The username is already taken try another");
             exit();
         } else {
             $sql_insert = "INSERT INTO `tbl_user_info`(`id_number`, `acc_pw`, `first_name`, `middle_name`, `family_name`, `acc_type`) 
@@ -73,12 +73,12 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repe
                 header("Location: ../pages/welcome.php?success=Your account has been created successfully");
                 exit();
             } else {
-                 header("Location: ../register.php?error=Unknown error occured");
+                 header("Location: ../pages/register.php?error=Unknown error occured");
                 exit();
             }
         }
     }
 } else {
-    header("Location: ../register.php");
+    header("Location: ../../");
     exit();
 }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "../db_conn.php";
-if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
+if (!isset($_SESSION['id_number'])) {
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +54,6 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
 
 <?php
 } else {
-  header("Location: ../../index.php");
+  header("Location: ../index.php");
 }
 ?>

@@ -1,4 +1,8 @@
-
+<?php
+    session_start();
+    echo $_SESSION['acc_type'];
+    echo $_SESSION['id_number'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -13,18 +13,19 @@ if ((isset($_POST['username']) && isset($_POST['password'])) ||
     $username = validate($_POST['username']);
     $password = validate($_POST['password']);
     if (empty($username)) {
-        header("Location: index.php?error=Username is required");
+        header("Location:index.php?error=Username is required");
         exit();
     } else if (empty($password)) {
-        header("Location: index.php?error=Password is required");
-    } else {
+        header("Location:index.php?error=Password is required");
+    } 
+    else {
         $password = md5($password);
         $sql = "SELECT * FROM tbl_user_info WHERE id_number='$username' AND acc_pw='$password'";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
            
-                $_SESSION['id'] = $row['id'];
+               
                 $_SESSION['id_number'] = $row['id_number'];
                 $_SESSION['password'] = $row['acc_pw'];
                 $_SESSION['acc_type'] = $row['acc_type'];
@@ -33,14 +34,16 @@ if ((isset($_POST['username']) && isset($_POST['password'])) ||
                 $_SESSION['family_name'] = $row['family_name'];
                 $_SESSION['p_consumable'] = $row['p_consumable'];
                 $_SESSION['p_consumed'] = $row['p_consumed'];
-                header("Location: pages/dashboard.php");
+                header("Location: ./pages/dashboard.php");
                 
         } else {
-            header("Location: index.php?error=Incorrect username or password");
+            header('Location:'.$_SERVER['PHP_SELF'].'?error=Incorrect username or password');
+            
             exit();
         }
     }
 } else {
-    header("Location: index.php?error=huh");
+    header("Location:index.php?error=huh");
     exit();
-}
+} 
+?>

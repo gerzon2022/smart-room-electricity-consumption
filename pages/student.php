@@ -1,21 +1,20 @@
-<?php if ($_SESSION['user_type'] === 'student') { 
-    if (isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['full_name'])) {
-        $user_id = $_SESSION['id'];
-        $full_name = $_SESSION['full_name'];
+<?php if ($_SESSION['acc_type'] === 'student') { 
+    if ( isset($_SESSION['id_number'])) {
+        $full_name = $_SESSION['first_name'];
 
-        $sql_current_user = "SELECT * FROM users WHERE id='$user_id'";
+        $sql_current_user = "SELECT * FROM tbl_user_info WHERE id_number='$user_id'";
         $result_current_user = mysqli_query($conn, $sql_current_user);
 
-        $sql_user = "SELECT * FROM users WHERE id != $user_id AND user_type = 'student'";
+        $sql_user = "SELECT * FROM tbl_user_info WHERE id_number != $user_id AND acc_type = 'student'";
         $result_user = mysqli_query($conn, $sql_user);
 
         $sql_classroom = "SELECT * FROM classroom";
         $result_classroom = mysqli_query($conn, $sql_classroom);
 
-        $sql_schedule = "SELECT * FROM schedule WHERE user='$full_name'";
+        $sql_schedule = "SELECT * FROM schedule WHERE first_name='$full_name'";
         $result_schedule = mysqli_query($conn, $sql_schedule);
 
-        $sql_all_students = "SELECT COUNT(*) FROM users WHERE user_type='student'";
+        $sql_all_students = "SELECT COUNT(*) FROM tbl_user_info WHERE acc_type='student'";
         $result_all_students = mysqli_query($conn, $sql_all_students);
         $row_all_students = mysqli_fetch_array($result_all_students);
         $total_all_students = $row_all_students[0];
@@ -34,7 +33,8 @@
         $result_all_unavailable = mysqli_query($conn, $sql_all_unavailable);
         $row_all_unavailable = mysqli_fetch_array($result_all_unavailable);
         $total_all_unavailable = $row_all_unavailable[0];
-    } else {
+    } 
+    else {
         header("Location: login.php");
     }
 ?>

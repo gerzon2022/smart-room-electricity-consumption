@@ -14,7 +14,6 @@
         <!-- USERS TABLE HEAD -->
         <thead>
             <tr class="bg-dark text-white">
-                
                 <th scope="col">Full Name</th>
                 <th scope="col">Contact #</th>
                 <th scope="col" class="d-none d-lg-table-cell">Email</th>
@@ -31,19 +30,18 @@
                     while ($row = mysqli_fetch_assoc($result_user)) { 
             ?>
             <tr>
-                
+              
                 <td><?=$row['first_name']; ?></td>
                 <td><?=$row['middle_name']; ?></td>
                 <td class="d-none d-lg-table-cell"><?=$row['family_name']; ?></td>
-                <td class="d-none d-lg-table-cell"><?=$row['p_consumed']; ?></td>
+                <td class="d-none d-lg-table-cell"><?=$row['course']; ?></td>
                 <td class="text-center">
-                <?=$row['acc_status']; ?>
                     <?php if ($row['user_type'] === 'student') { ?>
-                        <?//=$row['allowance']-1; ?>
+                        <?=$row['allowance']-1; ?>
                         <a class="btn btn-info btn-sm mb-lg-0 mb-md-1" 
                             href="php/update/update_user_allowance.php
-                                ?id=<?php //echo $row['id']; ?>
-                                &allowance=<?php //echo $row['allowance']+1; ?>"
+                                ?id=<?php echo $row['id']; ?>
+                                &allowance=<?php echo $row['allowance']+1; ?>"
                             >+
                         </a>
                     <?php } else if ($row['user_type'] === 'admin') { ?>
@@ -51,7 +49,6 @@
                     <?php } else { ?>
                         <p>N/A for Faculty</p>
                     <?php } ?>
-
                 </td>
                 <td>
                     <?php if ($row['user_type'] === 'student') { ?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "../db_conn.php";
-if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
+if (isset($_SESSION['id_number'])) {
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +12,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <script
   src="https://code.jquery.com/jquery-3.6.3.min.js"
   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
@@ -43,9 +44,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
           ?>
             <div class="display-area">
                 <div class="display-content">
-                <?php
-                  include 'activateUsers.php'
-                ?>
+               
                 <!-- ADMIN -->
                 <?php include "admin.php"; ?>
 
@@ -59,12 +58,13 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
 
         </div>
     </main>
-
+<!-- BOOTSTRAP JS -->
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
 <?php
 } else {
-  header("Location: ../../index.php");
+  header("Location: ../index.php");
 }
 ?>

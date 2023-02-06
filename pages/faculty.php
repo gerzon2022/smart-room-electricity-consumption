@@ -1,5 +1,5 @@
-<?php if ($_SESSION['user_type'] === 'faculty') { 
-    if (isset($_SESSION['username']) && isset($_SESSION['id_number'])) {
+<?php if ($_SESSION['acc_type'] === 'faculty') { 
+    if ( isset($_SESSION['id_number'])) {
         $user_id =  $_SESSION['id_number'];
 
         $sql_current_user = "SELECT * FROM tbl_user_info WHERE id_number='$user_id'";
@@ -33,8 +33,9 @@
         $result_all_unavailable = mysqli_query($conn, $sql_all_unavailable);
         $row_all_unavailable = mysqli_fetch_array($result_all_unavailable);
         $total_all_unavailable = $row_all_unavailable[0];
-    } else {
-        header("Location: login.php");
+    } 
+    else {
+        header("Location: ../index.php");
     }
 ?>
 <!-- CONTAINER -->
@@ -54,13 +55,13 @@
                 while ($row = mysqli_fetch_assoc($result_current_user)) { ?>
             <div class="row p-2">
                 <div class="col-6">
-                    <h2><?=$row['full_name']?></h2>
+                    <h2><?=$row['first_name']?></h2>
                     <h6>Faculty</h6>
                     <a class="btn btn-outline-success float-right" href="update.php?id=<?php echo $_SESSION['id']; ?>">Update Account</a>
                 </div>
                 <div class="col-3">
-                    Email: <h5><?=$row['email']?></h5>
-                    Contact Number: <h5><?=$row['contact_number']?></h5>
+                    Email: <h5><?=$row['first_name']?></h5>
+                    Contact Number: <h5><?=$row['first_name']?></h5>
                 </div>
             </div>
             <?php }} ?>

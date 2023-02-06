@@ -49,7 +49,7 @@
                                             <input type="password" class="password" placeholder="Password" name = "password" id = "password" />
                                         </div>
                                         <div class="signup-input">
-                                            <input type="text" class="confirm-password" placeholder="Confirm Password" name = "repeat_password" id = "repeat_password"/>
+                                            <input type="password" class="confirm-password" placeholder="Confirm Password" name = "repeat_password" id = "repeat_password"/>
                                         </div>
                                         <div class="signup-button-container">
                                             <button style = "border : none;"><div class="register-btn">register</div></button>

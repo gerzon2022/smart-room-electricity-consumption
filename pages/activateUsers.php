@@ -1,5 +1,6 @@
 
     <div class="content activate-users">
+     
         <table id = "myTable">
             <thead>
                 <tr>

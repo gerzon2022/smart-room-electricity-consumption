@@ -1,11 +1,11 @@
-<?php if ($_SESSION['user_type'] === 'admin') { 
-    if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
-        $user_id = $_SESSION['id'];
+<?php if ($_SESSION['acc_type'] == 'admin') { 
+    if (isset($_SESSION['id_number'])) {
+        $user_id = $_SESSION['id_number'];
 
-        $sql_current_user = "SELECT * FROM users WHERE id='$user_id'";
+        $sql_current_user = "SELECT * FROM tbl_user_info WHERE id_number='$user_id'";
         $result_current_user = mysqli_query($conn, $sql_current_user);
 
-        $sql_user = "SELECT * FROM users WHERE id != $user_id";
+        $sql_user = "SELECT * FROM tbl_user_info WHERE id_number != $user_id";
         $result_user = mysqli_query($conn, $sql_user);
 
         $sql_classroom = "SELECT * FROM classroom";
@@ -14,7 +14,7 @@
         $sql_schedule = "SELECT * FROM schedule";
         $result_schedule = mysqli_query($conn, $sql_schedule);
 
-        $sql_all_students = "SELECT COUNT(*) FROM users WHERE user_type='student'";
+        $sql_all_students = "SELECT COUNT(*) FROM tbl_user_info WHERE acc_type='student'";
         $result_all_students = mysqli_query($conn, $sql_all_students);
         $row_all_students = mysqli_fetch_array($result_all_students);
         $total_all_students = $row_all_students[0];
@@ -33,8 +33,9 @@
         $result_all_unavailable = mysqli_query($conn, $sql_all_unavailable);
         $row_all_unavailable = mysqli_fetch_array($result_all_unavailable);
         $total_all_unavailable = $row_all_unavailable[0];
-    } else {
-        header("Location: login.php");
+    } 
+    else {
+        header("Location: ../index.php");
     }
 ?>
 <!-- CONTAINER -->
@@ -45,7 +46,7 @@
         
         <!-- USER IMAGE -->
         <div class="col-4 p-2 m-2">
-            <img src="src/img/default.png" class="card-img-top img-fluid" alt="default-img">
+            <img src="../images/default.png" class="card-img-top img-fluid" alt="default-img">
         </div>
 
         <!-- USER INFORMATION -->
@@ -54,7 +55,7 @@
                 while ($row = mysqli_fetch_assoc($result_current_user)) { ?>
             <div class="row p-2">
                 <div class="col-6">
-                    <h2><?=$row['full_name']?></h2>
+                    <h2><?=$row['first_name']?></h2>
                     <h6>Administrator</h6>
                     <a class="col btn btn-outline-success float-right mb-1" href="update.php?id=<?php echo $_SESSION['id']; ?>">Update Account</a>
                     <form method="POST" action="src/export.php">
@@ -62,8 +63,8 @@
                     </form>
                 </div>
                 <div class="col-3">
-                    Email: <h5><?=$row['email']?></h5>
-                    Contact Number: <h5><?=$row['contact_number']?></h5>
+                    Email: <h5><?=$row['first_name']?></h5>
+                    Contact Number: <h5><?=$row['first_name']?></h5>
                 </div>
             </div>
             <?php }} ?>
@@ -152,7 +153,9 @@
                 
                 <!-- USERS TAB -->
                 <?php include "users.php"; ?>
-
+                <?php
+                  //include 'activateUsers.php'
+                ?>
                 <!-- CLASSROOMS TAB -->
                 <?php include "classrooms.php" ;?>
 
