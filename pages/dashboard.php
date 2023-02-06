@@ -46,6 +46,14 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
                 <?php
                   include 'activateUsers.php'
                 ?>
+                <!-- ADMIN -->
+                <?php include "admin.php"; ?>
+
+                <!-- FACULTY -->
+                <?php include "faculty.php"; ?>
+
+                <!-- STUDENT -->
+                <?php include "student.php"; ?>
                 </div>
             </div>
 
