@@ -15,8 +15,8 @@
         <thead>
             <tr class="bg-dark text-white">
                 <th scope="col">Full Name</th>
-                <th scope="col">Contact #</th>
-                <th scope="col" class="d-none d-lg-table-cell">Email</th>
+                <th scope="col">Account Status</th>
+                <th scope="col" class="d-none d-lg-table-cell">Power Consumed</th>
                 
                 <th scope="col">Power Allowance</th>
                 <th scope="col">Action</th>
@@ -31,19 +31,19 @@
             ?>
             <tr>
               
-                <td><?=$row['first_name']; ?></td>
-                <td><?=$row['middle_name']; ?></td>
-                <td class="d-none d-lg-table-cell"><?=$row['family_name']; ?></td>
+                <td><?=$row['first_name'] . " " .$row['middle_name']. " " .$row['family_name']; ?></td>
+                <td><?=$row['acc_status']; ?></td>
+                <td class="d-none d-lg-table-cell"><?=$row['p_consumed']; ?></td>
                 
                 <td class="text-center">
                     <?php if ($row['acc_type'] === 'student') { ?>
-                        <?=$row['p_consumable']-1; ?>
-                        <a class="btn btn-info btn-sm mb-lg-0 mb-md-1" 
-                            href="update/update_user_allowance.php
-                                ?id=<?php echo $row['id']; ?>
-                                &allowance=<?php echo $row['p_consumable']+1; ?>"
-                            >+
-                        </a>
+
+                        <form action="update/update_user_allowance.php" method="GET">
+                            <input type="hidden" name = "id_number" value = "<?php echo $row['id_number']; ?>">
+                            <input type="text" name = "p_consumable" value = " <?=$row['p_consumable']; ?>">
+                            <input type="submit" value = "Update">
+                        </form>
+                       
                     <?php } else if ($row['acc_type'] === 'admin') { ?>
                         <p>N/A for Admin</p>
                     <?php } else { ?>
@@ -52,8 +52,7 @@
                 </td>
                 <td>
                     <?php if ($row['acc_type'] === 'student') { ?>
-                        <a class="btn btn-success btn-sm mb-lg-0 mb-md-1" 
-                            href="add_schedule.php?user=<?php echo $row['first_name']; ?>&course=<?php echo $row['course']; ?>">Set Schedule</a>
+                        
                         <?php echo "<a class='btn btn-danger btn-sm' onClick=\"javascript: 
                             return confirm('Click OK to delete ".$row['first_name'].".');\" href='delete/delete_user.php?
                             id=".$row['id_number']."'>Remove</a>"; ?>

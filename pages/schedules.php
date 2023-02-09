@@ -43,7 +43,7 @@
                 <td><?=$row['start_time']; ?></td>
                 <td><?=$row['end_time']; ?></td>
                 <td>
-                    <a class="btn btn-success btn-sm mb-lg-0 mb-md-1" href="resched.php?id=<?php echo $row['id']; ?>">Reschedule</a>
+                    
                     <?php echo "<a class='btn btn-danger btn-sm' onClick=\"javascript: 
                         return confirm('Click OK to delete Schedule of user ".
                         " start time: ".$row['start_time']." end time: ".

@@ -24,7 +24,7 @@
                     <div class="split-container">
                         <div class="split-content">
                             <div class="right">
-                            <form action="../create/create_user.php" method = "POST" class="signup-form">
+                            <form action="../pages/create/create.php" method = "POST" class="signup-form">
                                     <div class="signup-input">
                                         <select name="user_type" id="user_type" class="input">
                                             <option value="faculty">I am a faculty</option>
@@ -51,6 +51,11 @@
                                         <div class="signup-input">
                                             <input type="password" class="confirm-password" placeholder="Confirm Password" name = "repeat_password" id = "repeat_password"/>
                                         </div>
+                                        <?php
+                                            if(isset($_GET['error'])) {
+                                                echo $_GET['error'];
+                                            }
+                                        ?>
                                         <div class="signup-button-container">
                                             <button style = "border : none;"><div class="register-btn">register</div></button>
                                         </div>
@@ -60,6 +65,11 @@
                                         </div>
                                     </div>
                                 </form>
+                                <?php
+                                            if(isset($_GET['error'])) {
+                                                echo $_GET['error'];
+                                            }
+                                        ?>
                             </div>
                         </div>
                     </div>

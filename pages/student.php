@@ -55,97 +55,36 @@
                 while ($row = mysqli_fetch_assoc($result_current_user)) { ?>
             <div class="row p-2">
                 <div class="col-6">
-                    <h2><?=$row['first_name']?></h2>
-                    <h6>Student Allowance: <?=$row['p_consumable']-1?></h6>
+                    <h2><?=$row['first_name'] . " " .$row['family_name'] ?></h2>
+                    <h6>Power Allowance: <?=$row['p_consumable']-1?></h6>
                     <a class="btn btn-outline-success float-right" href="update.php?id=<?php echo $_SESSION['id']; ?>">Update Account</a>
                 </div>
+            <?php
+                while (true) {
+                    $sql = "SELECT * FROM tbl_user_info";
+                    $result = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        print_r($row['p_consumed']);
+                      }
+                    } else {
+                      echo "No data found";
+                    }
+                
+                    sleep(10);
+                  }
+            
+            ?>
+                
                 <div class="col-3">
-                    Email: <h5><?=$row['first_name']?></h5>
-                    Contact Number: <h5><?=$row['first_name']?></h5>
+                    Power Consumed: <h5><?=$row['first_name']?></h5>
+                 
                 </div>
             </div>
             <?php }} ?>
-            <div class="row p-2">
-                <table class="table table-sm table-hover table-bordered">
-                    <thead>
-                        <tr class="bg-dark text-white">
-                            <th scope="col">Students Registered</th>
-                            <th scope="col">Classroom/s</th>
-                            <th scope="col">Available Classroom/s</th>
-                            <th scope="col">Unavailable Classroom/s</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><?php echo $total_all_students; ?></td>
-                            <td><?php echo $total_all_classrooms; ?></td>
-                            <td><?php echo $total_all_available; ?></td>
-                            <td><?php echo $total_all_unavailable; ?></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+      
         </div>
     </div>
     
-    <div class="row">
-        <div class="p-3">
-            
-            <!-- ALERT MESSAGES -->
-            <?php if (isset($_GET['msg'])) { ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <?php echo $_GET['msg']; ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php } ?>
-            <?php if (isset($_GET['success'])) { ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <?php echo $_GET['success']; ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php } ?>
-            <?php if (isset($_GET['error'])) { ?>
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <?php echo $_GET['error']; ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php } ?>
-            
-            <!-- TABS LINK -->
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="schedule-tab" 
-                            data-bs-toggle="tab" 
-                            data-bs-target="#schedule" 
-                            type="button" role="tab" 
-                            aria-controls="schedule" 
-                            aria-selected="false">
-                            <h1 style="font-size: 3vw;">Schedule</h1>
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="classroom-tab" 
-                            data-bs-toggle="tab" 
-                            data-bs-target="#classroom" 
-                            type="button" role="tab" 
-                            aria-controls="classroom" 
-                            aria-selected="false">
-                            <h1 style="font-size: 3vw;">Classrooms</h1>
-                    </button>
-                </li>
-            </ul>
-            
-            <!-- TAB CONTENT -->
-            <div class="tab-content" id="myTabContent">
-
-                <!-- SCHEDULES TAB -->
-                <?php include "schedules.php"; ?>
-
-                <!-- CLASSROOMS TAB -->
-                <?php include "classrooms.php" ;?>
-            </div>
-        </div>
-    </div>
-</div>
     
 <?php } ?>

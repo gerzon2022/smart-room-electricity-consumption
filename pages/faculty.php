@@ -1,11 +1,11 @@
 <?php if ($_SESSION['acc_type'] === 'faculty') { 
     if ( isset($_SESSION['id_number'])) {
         $user_id =  $_SESSION['id_number'];
-
+        echo $_SESSION['id_number'];
         $sql_current_user = "SELECT * FROM tbl_user_info WHERE id_number='$user_id'";
         $result_current_user = mysqli_query($conn, $sql_current_user);
 
-        $sql_user = "SELECT * FROM tbl_user_info WHERE id_number != $user_id AND acc_type = 'faculty' OR acc_type = 'student'";
+        $sql_user = "SELECT * FROM tbl_user_info WHERE id_number != '$user_id' AND acc_type = 'faculty' OR acc_type = 'student'";
         $result_user = mysqli_query($conn, $sql_user);
 
         $sql_classroom = "SELECT * FROM classroom";
@@ -46,7 +46,7 @@
         
         <!-- USER IMAGE -->
         <div class="col-4 p-2 m-2">
-            <img src="src/img/default.png" class="card-img-top img-fluid" alt="default-img">
+            <img src="../images/default.png" class="card-img-top img-fluid" alt="default-img">
         </div>
 
         <!-- USER INFORMATION -->

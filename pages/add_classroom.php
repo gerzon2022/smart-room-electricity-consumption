@@ -35,7 +35,7 @@
 
         <!-- ROOM NUMBER -->
         <div class="mb-3">
-            <label for="room_number" class="form-label">Room Number:</label>
+            <label for="room_number" class="form-label">Device Number:</label>
             <input  type="text" 
                     class="form-control" 
                     name="room_number"

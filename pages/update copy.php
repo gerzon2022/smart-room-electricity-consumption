@@ -1,9 +1,9 @@
 <?php
 session_start();
-include "db_conn.php";
+include "../db_conn.php";
 if (isset($_GET['id_number'])) {
     $update_id = $_GET['id_number'];
-    $sql = "SELECT * FROM `tbl_user_info` WHERE id_number = '$update_id'"; 
+    $sql = "SELECT * FROM `users` WHERE id = '$update_id'"; 
     $result = mysqli_query($conn, $sql);
     $update_row = mysqli_fetch_assoc($result);
 ?>
@@ -16,7 +16,7 @@ if (isset($_GET['id_number'])) {
     <title>Update Account</title>
 
     <!-- BOOTSTRAP CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="src/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body onload="setReadOnlyIfNotAStudent()">
 

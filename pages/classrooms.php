@@ -16,7 +16,7 @@
         <thead>
             <tr class="bg-dark text-white">
                 <th scope="col">Building</th>
-                <th scope="col">Room Number</th>
+                <th scope="col">Device Number</th>
                 <th scope="col">Status</th>
                 <?php if ($_SESSION['acc_type'] !== 'student') { ?>
                 <th scope="col">Action</th>
