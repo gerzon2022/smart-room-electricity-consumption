@@ -4,7 +4,7 @@ body {
 }
 
 @media (min-width: 720px) {
-  .input, main .main-content .hero .split-container .split-content .right .login-content .login-inputs input, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-input input, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-button-container .register-btn input, main .main-content .hero .split-container .split-content .right .signup-button-container .signup-inputs .register-btn input, main .main-content .hero .split-container .split-content .right .signup-inputs .new-user-question .register-btn input, main .main-content .hero .split-container .split-content .right .new-user-question .signup-inputs .register-btn input {
+  .input, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-input input, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-button-container .register-btn input, main .main-content .hero .split-container .split-content .right .signup-inputs .new-user-question .register-btn input, main .main-content .hero .split-container .split-content .right .signup-button-container .signup-inputs .register-btn input, main .main-content .hero .split-container .split-content .right .new-user-question .signup-inputs .register-btn input, main .main-content .hero .split-container .split-content .right .login-content .login-inputs input, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .submit-btn {
     height: 30px;
   }
   header .header-content {
@@ -13,34 +13,25 @@ body {
     border: 1px solid black;
   }
   main {
-    height: 100vh;
-    width: 100vw;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
   }
   main .main-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
   }
   main .main-content .hero {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
     width: 950px;
     height: 600px;
-    -webkit-box-shadow: 2px 2px 10px 3px black;
-            box-shadow: 2px 2px 10px 3px black;
+    box-shadow: 2px 2px 10px 3px black;
   }
   main .main-content .hero .split-container {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   main .main-content .hero .split-container .split-content {
@@ -55,16 +46,9 @@ body {
     background-position: center;
   }
   main .main-content .hero .split-container .split-content .right {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     height: auto;
     padding: 20px;
   }
@@ -73,20 +57,16 @@ body {
     display: inline;
   }
   main .main-content .hero .split-container .split-content .right .login-img-container .img-top {
-    -webkit-transform: scale(0.75);
-            transform: scale(0.75);
+    transform: scale(0.75);
     width: 350px;
     height: 325px;
   }
   main .main-content .hero .split-container .split-content .right .login-content {
     height: 150px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
   }
-  main .main-content .hero .split-container .split-content .right .login-content .login-inputs input, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .new-user-question {
+  main .main-content .hero .split-container .split-content .right .login-content .login-inputs input, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .submit-btn {
     margin: 10px 0;
     width: 300px;
     font-weight: 600;
@@ -107,15 +87,9 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     text-transform: uppercase;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
     margin: 20px 0;
     color: #fff;
@@ -128,35 +102,25 @@ body {
     font-weight: 600;
     text-transform: capitalize;
   }
-  main .main-content .hero .split-container .split-content .right .signup-inputs .signup-input, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-button-container .register-btn, main .main-content .hero .split-container .split-content .right .signup-button-container .signup-inputs .register-btn, main .main-content .hero .split-container .split-content .right .signup-inputs .new-user-question .register-btn, main .main-content .hero .split-container .split-content .right .new-user-question .signup-inputs .register-btn {
+  main .main-content .hero .split-container .split-content .right .signup-inputs .signup-input, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-button-container .register-btn, main .main-content .hero .split-container .split-content .right .signup-inputs .new-user-question .register-btn, main .main-content .hero .split-container .split-content .right .signup-button-container .signup-inputs .register-btn, main .main-content .hero .split-container .split-content .right .new-user-question .signup-inputs .register-btn {
     padding: 15px 10px;
   }
-  main .main-content .hero .split-container .split-content .right .signup-inputs .signup-input input, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-button-container .register-btn input, main .main-content .hero .split-container .split-content .right .signup-button-container .signup-inputs .register-btn input, main .main-content .hero .split-container .split-content .right .signup-inputs .new-user-question .register-btn input, main .main-content .hero .split-container .split-content .right .new-user-question .signup-inputs .register-btn input, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-input .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .signup-inputs .signup-input .submit-btn, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-button-container .register-btn .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .signup-inputs .signup-button-container .register-btn .submit-btn, main .main-content .hero .split-container .split-content .right .signup-button-container .signup-inputs .register-btn .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .signup-button-container .signup-inputs .register-btn .submit-btn, main .main-content .hero .split-container .split-content .right .signup-inputs .new-user-question .register-btn .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .signup-inputs .new-user-question .register-btn .submit-btn, main .main-content .hero .split-container .split-content .right .new-user-question .signup-inputs .register-btn .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .new-user-question .signup-inputs .register-btn .submit-btn, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-input .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .signup-inputs .signup-input .new-user-question, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-button-container .register-btn .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .signup-inputs .signup-button-container .register-btn .new-user-question, main .main-content .hero .split-container .split-content .right .signup-button-container .signup-inputs .register-btn .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .signup-button-container .signup-inputs .register-btn .new-user-question, main .main-content .hero .split-container .split-content .right .signup-inputs .new-user-question .register-btn .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .signup-inputs .new-user-question .register-btn .new-user-question, main .main-content .hero .split-container .split-content .right .new-user-question .signup-inputs .register-btn .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .new-user-question .signup-inputs .register-btn .new-user-question {
+  main .main-content .hero .split-container .split-content .right .signup-inputs .signup-input input, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-button-container .register-btn input, main .main-content .hero .split-container .split-content .right .signup-inputs .new-user-question .register-btn input, main .main-content .hero .split-container .split-content .right .signup-button-container .signup-inputs .register-btn input, main .main-content .hero .split-container .split-content .right .new-user-question .signup-inputs .register-btn input, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-input .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-button-container .register-btn .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .signup-inputs .new-user-question .register-btn .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .signup-button-container .signup-inputs .register-btn .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .new-user-question .signup-inputs .register-btn .login-content .login-inputs .login-button-container .submit-btn, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .signup-inputs .signup-input .submit-btn, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .signup-inputs .signup-button-container .register-btn .submit-btn, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .login-button-container .signup-inputs .new-user-question .register-btn .submit-btn, main .main-content .hero .split-container .split-content .right .signup-button-container .login-content .login-inputs .login-button-container .signup-inputs .register-btn .submit-btn, main .main-content .hero .split-container .split-content .right .new-user-question .login-content .login-inputs .login-button-container .signup-inputs .register-btn .submit-btn, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-input .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .signup-inputs .signup-button-container .register-btn .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .signup-inputs .new-user-question .register-btn .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .signup-button-container .signup-inputs .register-btn .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .new-user-question .signup-inputs .register-btn .login-content .login-inputs .new-user-question, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .signup-inputs .signup-input .new-user-question, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .signup-inputs .signup-button-container .register-btn .new-user-question, main .main-content .hero .split-container .split-content .right .login-content .login-inputs .signup-inputs .new-user-question .register-btn .new-user-question, main .main-content .hero .split-container .split-content .right .signup-button-container .login-content .login-inputs .signup-inputs .register-btn .new-user-question, main .main-content .hero .split-container .split-content .right .new-user-question .login-content .login-inputs .signup-inputs .register-btn .new-user-question {
     width: 300px;
     font-weight: 600;
   }
   main .main-content .hero .split-container .split-content .right .signup-button-container, main .main-content .hero .split-container .split-content .right .new-user-question {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   main .main-content .hero .split-container .split-content .right .signup-button-container .register-btn, main .main-content .hero .split-container .split-content .right .new-user-question .register-btn {
     background-image: url("../images/Buttons/Singnin_Button.png");
     background-repeat: no-repeat;
     background-position: center;
     text-transform: uppercase;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
     margin: 20px 0;
     width: 295px;
@@ -168,13 +132,11 @@ body {
   }
   main .main-content.dashboard {
     display: unset;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
+    width: 2000px;
   }
   main .main-content.dashboard .side-nav {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
+    align-self: flex-start;
     padding: 10px;
   }
   main .main-content.dashboard .side-nav .nav-items-container .nav-list li.nav-item {
@@ -188,21 +150,15 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     text-transform: capitalize;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: left;
+    align-items: center;
     font-weight: 600;
     width: 295px;
     height: 30px;
     color: #fff;
     padding: 5px 8px;
-    letter-spacing: .2em;
+    letter-spacing: 0.2em;
   }
   main .main-content.dashboard .side-nav .nav-items-container .nav-list li.nav-item .menu a {
     text-decoration: none;
@@ -217,19 +173,11 @@ body {
   }
   .center-container {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
   }
   .center-container .center-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 900px;
   }
@@ -237,5 +185,4 @@ body {
     text-align: center;
     width: 300px;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

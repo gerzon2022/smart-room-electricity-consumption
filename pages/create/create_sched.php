@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "../db_conn.php";
-if (isset($_POST['full_name']) && isset($_POST['course']) && isset($_POST['location']) && 
+include "../../db_conn.php";
+if ( isset($_POST['location']) && 
     isset($_POST['start_time']) && isset($_POST['end_time'])) {
     function validate($data) {
         $data = trim($data);
@@ -9,25 +9,18 @@ if (isset($_POST['full_name']) && isset($_POST['course']) && isset($_POST['locat
         $data = htmlspecialchars($data);
         return $data;
     }
-    $full_name = validate($_POST['full_name']);
-    $course = validate($_POST['course']);
+   
     $location = validate($_POST['location']);
     $start_time = validate($_POST['start_time']);
     $end_time = validate($_POST['end_time']);
-    if (empty($full_name)) {
-        header("Location: ../../add_schedule.php?error=User is required");
-        exit();
-    } else if (empty($course)) {
-        header("Location: ../../add_schedule.php?error=Building is required");
-        exit();
-    } else if (empty($location)) {
-        header("Location: ../../add_schedule.php?error=Building is required");
+    if (empty($location)) {
+        header("Location: ../dashboard.php?page=add_schedule&error=Building is required");
         exit();
     } else if (empty($start_time)) {
-        header("Location: ../../add_schedule.php?error=Start Time is required");
+        header("Location: ../dashboard.php?page=add_schedule&error=Start Time is required");
         exit();
     } else if (empty($end_time)) {
-        header("Location: ../../add_schedule.php?error=End Time is required");
+        header("Location: ../dashboard.php?page=add_schedule&error=End Time is required");
         exit();
     } else {
         $user_check = "SELECT * FROM `users` WHERE `full_name`='$full_name' AND `user_type`='student'";
@@ -56,25 +49,22 @@ if (isset($_POST['full_name']) && isset($_POST['course']) && isset($_POST['locat
                                     VALUES (NULL,'$full_name','$course','$building','$room_number','$start_time','$end_time')";
                                 $result_insert = mysqli_query($conn, $sql_insert);
                                 if ($result_insert && $result_allowance) {
-                                    header("Location: ../../dashboard.php?success=Schedule has been created successfully");
+                                    header("Location: ../dashboard.php?page=main&success=Schedule has been created successfully");
                                     exit();
                                 } else {
-                                    header("Location: ../../dashboard.php?error=Unknown error occured");
+                                    header("Location: ../dashboard.php?page=add_schedule&error=Unknown error occured");
                                     exit();
                                 }
                             } else {
-                                header("Location: ../../add_schedule.php?error=Not enough allowance.");
+                                header("Location: ../dashboard.php?page=add_schedule&page=main&error=Not enough allowance.");
                                 exit();
                             }
                         }
                     } else {
-                        header("Location: ../../add_schedule.php?error=Location not found.");
+                        header("Location: ../dashboard.php?page=add_schedule&error=Location not found.");
                         exit();
                     }
-                } else {
-                    header("Location: ../../add_schedule.php?error=Course does not match.");
-                    exit();
-                }
+                } 
             }
         } else {
             header("Location: ../../add_schedule.php?error=This user is not a student.");
@@ -82,6 +72,6 @@ if (isset($_POST['full_name']) && isset($_POST['course']) && isset($_POST['locat
         }
     }
 } else {
-    header("Location: ../../login.php");
+    header("Location: ../../");
     exit();
 }

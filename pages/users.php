@@ -17,7 +17,7 @@
                 <th scope="col">Full Name</th>
                 <th scope="col">Contact #</th>
                 <th scope="col" class="d-none d-lg-table-cell">Email</th>
-                <th scope="col" class="d-none d-lg-table-cell">Course</th>
+                
                 <th scope="col">Power Allowance</th>
                 <th scope="col">Action</th>
             </tr>
@@ -34,34 +34,34 @@
                 <td><?=$row['first_name']; ?></td>
                 <td><?=$row['middle_name']; ?></td>
                 <td class="d-none d-lg-table-cell"><?=$row['family_name']; ?></td>
-                <td class="d-none d-lg-table-cell"><?=$row['course']; ?></td>
+                
                 <td class="text-center">
-                    <?php if ($row['user_type'] === 'student') { ?>
-                        <?=$row['allowance']-1; ?>
+                    <?php if ($row['acc_type'] === 'student') { ?>
+                        <?=$row['p_consumable']-1; ?>
                         <a class="btn btn-info btn-sm mb-lg-0 mb-md-1" 
-                            href="php/update/update_user_allowance.php
+                            href="update/update_user_allowance.php
                                 ?id=<?php echo $row['id']; ?>
-                                &allowance=<?php echo $row['allowance']+1; ?>"
+                                &allowance=<?php echo $row['p_consumable']+1; ?>"
                             >+
                         </a>
-                    <?php } else if ($row['user_type'] === 'admin') { ?>
+                    <?php } else if ($row['acc_type'] === 'admin') { ?>
                         <p>N/A for Admin</p>
                     <?php } else { ?>
                         <p>N/A for Faculty</p>
                     <?php } ?>
                 </td>
                 <td>
-                    <?php if ($row['user_type'] === 'student') { ?>
+                    <?php if ($row['acc_type'] === 'student') { ?>
                         <a class="btn btn-success btn-sm mb-lg-0 mb-md-1" 
-                            href="add_schedule.php?user=<?php echo $row['full_name']; ?>&course=<?php echo $row['course']; ?>">Set Schedule</a>
+                            href="add_schedule.php?user=<?php echo $row['first_name']; ?>&course=<?php echo $row['course']; ?>">Set Schedule</a>
                         <?php echo "<a class='btn btn-danger btn-sm' onClick=\"javascript: 
-                            return confirm('Click OK to delete ".$row['full_name'].".');\" href='php/delete/delete_user.php?
-                            id=".$row['id']."'>Remove</a>"; ?>
+                            return confirm('Click OK to delete ".$row['first_name'].".');\" href='delete/delete_user.php?
+                            id=".$row['id_number']."'>Remove</a>"; ?>
                     <?php } else {?>
                     <?php 
                         echo "<a class='btn btn-danger btn-sm' onClick=\"javascript: 
-                            return confirm('Click OK to delete ".$row['full_name'].".');\" href='php/delete/delete_user.php?
-                            id=".$row['id']."'>Remove</a>"; ?>
+                            return confirm('Click OK to delete ".$row['first_name'].".');\" href='delete/delete_user.php?
+                            id=".$row['id_number']."'>Remove</a>"; ?>
                     <?php } ?>
                 </td>
             </tr>

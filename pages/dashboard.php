@@ -40,19 +40,23 @@ if (isset($_SESSION['id_number'])) {
     <main>
         <div class="main-content dashboard">
           <?php
-            include 'side-nav.php'
+            if($_GET['page']=="main") { include 'side-nav.php' ;}
           ?>
             <div class="display-area">
                 <div class="display-content">
                
                 <!-- ADMIN -->
-                <?php include "admin.php"; ?>
+                <?php if($_GET['page']=="main") {include "admin.php";} ?>
 
                 <!-- FACULTY -->
-                <?php include "faculty.php"; ?>
+                <?php if($_GET['page']=="main") {include "faculty.php";} ?>
 
                 <!-- STUDENT -->
-                <?php include "student.php"; ?>
+                <?php if($_GET['page']=="main") {include "student.php";} ?>
+                
+                <?php if($_GET['page']=="add_classroom") {include "add_classroom.php";} ?>
+                <?php if($_GET['page']=="add_schedule") {include "add_schedule.php";} ?>
+
                 </div>
             </div>
 

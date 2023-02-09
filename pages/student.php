@@ -1,7 +1,7 @@
 <?php if ($_SESSION['acc_type'] === 'student') { 
     if ( isset($_SESSION['id_number'])) {
         $full_name = $_SESSION['first_name'];
-
+        $user_id = $_SESSION['id_number'];
         $sql_current_user = "SELECT * FROM tbl_user_info WHERE id_number='$user_id'";
         $result_current_user = mysqli_query($conn, $sql_current_user);
 
@@ -46,7 +46,7 @@
         
         <!-- USER IMAGE -->
         <div class="col-4 p-2 m-2">
-            <img src="src/img/default.png" class="card-img-top img-fluid" alt="default-img">
+            <img src="../images/default.png" class="card-img-top img-fluid" alt="default-img">
         </div>
 
         <!-- USER INFORMATION -->
@@ -55,13 +55,13 @@
                 while ($row = mysqli_fetch_assoc($result_current_user)) { ?>
             <div class="row p-2">
                 <div class="col-6">
-                    <h2><?=$row['full_name']?></h2>
-                    <h6>Student Allowance: <?=$row['allowance']-1?></h6>
+                    <h2><?=$row['first_name']?></h2>
+                    <h6>Student Allowance: <?=$row['p_consumable']-1?></h6>
                     <a class="btn btn-outline-success float-right" href="update.php?id=<?php echo $_SESSION['id']; ?>">Update Account</a>
                 </div>
                 <div class="col-3">
-                    Email: <h5><?=$row['email']?></h5>
-                    Contact Number: <h5><?=$row['contact_number']?></h5>
+                    Email: <h5><?=$row['first_name']?></h5>
+                    Contact Number: <h5><?=$row['first_name']?></h5>
                 </div>
             </div>
             <?php }} ?>

@@ -34,7 +34,7 @@ if ((isset($_POST['username']) && isset($_POST['password'])) ||
                 $_SESSION['family_name'] = $row['family_name'];
                 $_SESSION['p_consumable'] = $row['p_consumable'];
                 $_SESSION['p_consumed'] = $row['p_consumed'];
-                header("Location: ./pages/dashboard.php");
+                header("Location: ./pages/dashboard.php?page=main");
                 
         } else {
             header('Location:'.$_SERVER['PHP_SELF'].'?error=Incorrect username or password');
@@ -43,7 +43,7 @@ if ((isset($_POST['username']) && isset($_POST['password'])) ||
         }
     }
 } else {
-    header("Location:index.php?error=huh");
+    header("Location:index.php?");
     exit();
 } 
 ?>

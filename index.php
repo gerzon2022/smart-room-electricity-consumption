@@ -1,7 +1,8 @@
 <?php
     session_start();
-    echo $_SESSION['acc_type'];
-    echo $_SESSION['id_number'];
+    if (isset($_SESSION['id_number'])) {
+        header("Location: pages/dashboard.php?page=main");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

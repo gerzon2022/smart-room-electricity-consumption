@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../db_conn.php";
+include "../../db_conn.php";
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repeat_password']) &&
     isset($_POST['user_type']) && isset($_POST['first_name']) && isset($_POST['middle_name']) && isset($_POST['family_name'])) {
     function validate($data) {
@@ -70,15 +70,18 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repe
                         VALUES ('$username','$password','$first_name','$middle_name','$family_name', '$user_type')";
             $result_insert = mysqli_query($conn, $sql_insert);
             if ($result_insert) {
+                
                 header("Location: ../pages/welcome.php?success=Your account has been created successfully");
                 exit();
             } else {
+                
                  header("Location: ../pages/register.php?error=Unknown error occured");
                 exit();
             }
         }
     }
 } else {
+  
     header("Location: ../../");
     exit();
 }
