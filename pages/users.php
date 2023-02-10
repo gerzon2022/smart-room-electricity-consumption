@@ -55,13 +55,32 @@
                         
                         <?php echo "<a class='btn btn-danger btn-sm' onClick=\"javascript: 
                             return confirm('Click OK to delete ".$row['first_name'].".');\" href='delete/delete_user.php?
-                            id=".$row['id_number']."'>Remove</a>"; ?>
+                            id=".$row['id_number']."'>Remove</a>";
+
+                            echo "<a class='btn btn-dark btn-sm' onClick=\"javascript: 
+                            return confirm('Click OK to renew ".$row['first_name']." set power consumed to 0.');\" href='update/update_p_consumed.php?
+                            id_number=".$row['id_number']."&p_consumed=0'>Renew</a>";
+                            
+                            ?>
                     <?php } else {?>
                     <?php 
                         echo "<a class='btn btn-danger btn-sm' onClick=\"javascript: 
                             return confirm('Click OK to delete ".$row['first_name'].".');\" href='delete/delete_user.php?
                             id=".$row['id_number']."'>Remove</a>"; ?>
                     <?php } ?>
+
+                    <?php if ($row['acc_status'] === 'active') {?>
+                        
+                        <?php echo "<a class='btn btn-success btn-sm' onClick=\"javascript: 
+                            return confirm('Click OK to update ".$row['first_name'].". account status');\" href='update/update_acc_status.php?
+                            id_number=".$row['id_number']."&acc_status=inactive'>Deactivate</a>"; ?>
+                    <?php } else {   ?>
+                    <?php 
+                        echo "<a class='btn btn-success btn-sm' onClick=\"javascript: 
+                        return confirm('Click OK to update ".$row['first_name'].". account status');\" href='update/update_acc_status.php?
+                        id_number=".$row['id_number']."&acc_status=active'>Activate</a>"; ?>
+                    <?php } ?>
+
                 </td>
             </tr>
             <?php }} ?>
