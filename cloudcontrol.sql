@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2023 at 01:25 AM
+-- Generation Time: Feb 10, 2023 at 02:24 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -97,6 +97,13 @@ CREATE TABLE `tbl_device` (
   `device_status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tbl_device`
+--
+
+INSERT INTO `tbl_device` (`device_id`, `device_status`) VALUES
+(1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -150,7 +157,7 @@ CREATE TABLE `tbl_user_info` (
 --
 
 INSERT INTO `tbl_user_info` (`id_number`, `acc_type`, `rfid_code`, `acc_status`, `p_consumable`, `p_consumed`, `acc_pw`, `first_name`, `middle_name`, `family_name`) VALUES
-('admin', 'admin', '', 'active', '0', '0', '202cb962ac59075b964b07152d234b70', 'Admin', 'Admin', 'Admin'),
+('2', 'admin', '', 'active', '0', '0', '202cb962ac59075b964b07152d234b70', 'Admin', 'Admin', 'Admin'),
 ('12312321', 'faculty', '', '', '0', '0', '202cb962ac59075b964b07152d234b70', 'asdf', 'asdf', 'asdf'),
 ('12312312', 'faculty', '', '', '0', '0', '202cb962ac59075b964b07152d234b70', '123123', '123', '112312'),
 ('123123', 'student', '', '', '123', '0', '202cb962ac59075b964b07152d234b70', 'fasdf', 'asdfa', 'sdfasdf'),
