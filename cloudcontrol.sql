@@ -150,7 +150,7 @@ CREATE TABLE `tbl_user_info` (
 --
 
 INSERT INTO `tbl_user_info` (`id_number`, `acc_type`, `rfid_code`, `acc_status`, `p_consumable`, `p_consumed`, `acc_pw`, `first_name`, `middle_name`, `family_name`) VALUES
-('2', 'admin', '', 'active', '0', '0', '202cb962ac59075b964b07152d234b70', 'Admin', 'Admin', 'Admin'),
+('admin', 'admin', '', 'active', '0', '0', '202cb962ac59075b964b07152d234b70', 'Admin', 'Admin', 'Admin'),
 ('12312321', 'faculty', '', '', '0', '0', '202cb962ac59075b964b07152d234b70', 'asdf', 'asdf', 'asdf'),
 ('12312312', 'faculty', '', '', '0', '0', '202cb962ac59075b964b07152d234b70', '123123', '123', '112312'),
 ('123123', 'student', '', '', '123', '0', '202cb962ac59075b964b07152d234b70', 'fasdf', 'asdfa', 'sdfasdf'),
